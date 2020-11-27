@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.main-content {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15vh;
+    background-color:  #eeeeee;
+}
+
+.main-content .title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    position: relative;
+}
+.main-content .title:before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: -5px;
+    left: 25%;
+    border-bottom: 3px solid #000000;
+}
+
+.questions {
+    width: 50%;
+}
+
+.question {
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+.quastion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px ;
+    background-color:#f7f7f7;
+}
+.quastion-title p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #212121;
+    transition: color ease .15s;
+}
+
+.question-button {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline:none;
+}
+
+.plus {
+    font-size: 1rem;
+}
+
+.minus {
+    font-size: 1rem;
+    display: none;
+}
+
+.question-answer {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212121;
+    text-align: justify;
+    padding: 0 20px;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all ease .35s;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  #222831;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.active .question-answer {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    padding: 20px 20px;
+}
+.active .quastion-title p {
+    color: #d72323;
+}
+.active .minus {
+    display: inline;
+}
+.active .plus{
+    display: none;
+}
+
+/* media queries */
+@media screen and (max-width: 1056px) {
+    .questions {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 748px) {
+    .questions {
+        width: 90%;
+    }
+    .quastion-title p {
+        font-size: 1rem;
+    }
+    .question-answer {
+        font-size: .9rem;
+    }
+    .footer {
+        font-size: 1rem;
+    }
+}
